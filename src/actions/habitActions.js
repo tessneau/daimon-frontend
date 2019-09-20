@@ -1,7 +1,7 @@
 // export const getCurrentHabits = (userId) => dispatch => {
 //   dispatch({ type: "CREATE_HABIT_START" });
 //
-//   return fetch(`http://localhost:3000/users/${userId}/habits`, {
+//   return fetch(`https://daimon-backend.herokuapp.com/users/${userId}/habits`, {
 //     headers: {
 //       'Content-Type': 'application/json',
 //       'Accept': 'application/json',
@@ -20,7 +20,7 @@
 export const createHabit = (habitInformation={}) => dispatch => {
   dispatch({ type: "CREATE_HABIT_START" });
 
-  return fetch(`http://localhost:3000/habits`, {
+  return fetch(`https://daimon-backend.herokuapp.com/habits`, {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export const createHabit = (habitInformation={}) => dispatch => {
 export const updateHabitProgress = userHabitId => dispatch => {
   dispatch({ type: "UPDATE_HABIT_START" });
 
-  return fetch(`http://localhost:3000/user_habits/${userHabitId}`, {
+  return fetch(`https://daimon-backend.herokuapp.com/user_habits/${userHabitId}`, {
     method: "PATCH",
     headers: {
       'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ export const updateHabitProgress = userHabitId => dispatch => {
 export const deleteHabit = (userHabitId) => dispatch => {
   dispatch({ type: "DELETE_HABIT_START" });
 
-  return fetch(`http://localhost:3000/user_habits/${userHabitId}`, {
+  return fetch(`https://daimon-backend.herokuapp.com/user_habits/${userHabitId}`, {
     method: "DELETE",
     headers: {
       'Authorization': localStorage.token

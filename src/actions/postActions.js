@@ -1,7 +1,7 @@
 export const pinPost = id => dispatch => {
   dispatch({ type: "POST_PIN_START" });
 
-  return fetch(`http://localhost:3000/posts/${id}/pins`, {
+  return fetch(`https://daimon-backend.herokuapp.com/posts/${id}/pins`, {
     method: "POST",
     headers: {
       Authorization: localStorage.token
@@ -17,7 +17,7 @@ export const pinPost = id => dispatch => {
 };
 
 export const branchPost = id => dispatch => {
-  return fetch(`http://localhost:3000/posts/${id}/branches`, {
+  return fetch(`https://daimon-backend.herokuapp.com/posts/${id}/branches`, {
     method: "POST",
     headers: {
       Authorization: localStorage.token

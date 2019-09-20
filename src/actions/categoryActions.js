@@ -6,7 +6,7 @@
 
 export const getCategories = () => dispatch => {
   dispatch({ type: "GET_CATEGORIES_START" });
-  return fetch("http://localhost:3000/categories", {
+  return fetch("https://daimon-backend.herokuapp.com/categories", {
     headers: {
       Authorization: localStorage.token
     }

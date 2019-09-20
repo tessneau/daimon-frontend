@@ -1,6 +1,6 @@
 export const logIn = (loginInformation={}) => dispatch => {
   dispatch({ type: "LOGIN_REQUEST_START" })
-  return fetch('http://localhost:3000/login', {
+  return fetch('https://daimon-backend.herokuapp.com/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ export const logIn = (loginInformation={}) => dispatch => {
 
 export const getCurrentUser = (token) => {
   return (dispatch) => {
-    fetch("http://localhost:3000/profile", {
+    fetch("https://daimon-backend.herokuapp.com/profile", {
       method: "GET",
       headers: {
         "Authorization": token
@@ -46,7 +46,7 @@ export const getCurrentUser = (token) => {
 
 export const signUp = (signUpInformation={}) => dispatch => {
   dispatch({ type: "SIGNUP_REQUEST_START" })
-  return fetch('http://localhost:3000/signup', {
+  return fetch('https://daimon-backend.herokuapp.com/signup', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ export const signUp = (signUpInformation={}) => dispatch => {
 }
 
 export const createPost = (postInformation={}) => dispatch => {
-  return fetch('http://localhost:3000/posts', {
+  return fetch('https://daimon-backend.herokuapp.com/posts', {
     method: 'POST',
     headers: {
       'Content-Type':'application/json',
