@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
 import '../style/Home.scss'
 
-class Home extends Component {
+const Home = () => {
 
-  render() {
     return (
       <div className="home-container">
       <h1>DAIMON</h1>
@@ -25,8 +24,6 @@ class Home extends Component {
         </div>
       </div>
     );
-  }
-
 }
 
 export default Home;

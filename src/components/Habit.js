@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Moment from 'react-moment';
+// import Moment from 'react-moment';
 import { VictoryPie, VictoryAnimation, VictoryLabel } from 'victory';
 import 'moment-timezone';
 import { connect } from 'react-redux';
@@ -29,7 +29,6 @@ class Habit extends Component {
     if (this.state.progress_count < this.props.habit.maxFrequency) {
     this.setState({progress_count: this.state.progress_count + 1}, () => {
       let updatedPercent = (this.state.progress_count/ this.props.habit.maxFrequency)*100
-      // updatedPercent = (updatedPercent >= 100) ? 100 : updatedPercent;
       if (updatedPercent >= 100) {
         updatedPercent = 100
         this.setState({
