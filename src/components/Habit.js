@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ProgressBar from './ProgressBar';
 import Moment from 'react-moment';
 import { VictoryPie, VictoryAnimation, VictoryLabel } from 'victory';
 import 'moment-timezone';

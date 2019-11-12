@@ -70,7 +70,6 @@ class Community extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="community-container">
       <h1>COMMUNITY</h1>
