@@ -19,8 +19,8 @@
 
 export const createHabit = (habitInformation={}) => dispatch => {
   dispatch({ type: "CREATE_HABIT_START" });
-
-  return fetch(`https://daimon-backend.herokuapp.com/habits`, {
+  const url = `https://daimon-backend.herokuapp.com/habits`
+  return fetch(url, {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
@@ -40,8 +40,8 @@ export const createHabit = (habitInformation={}) => dispatch => {
 
 export const updateHabitProgress = userHabitId => dispatch => {
   dispatch({ type: "UPDATE_HABIT_START" });
-
-  return fetch(`https://daimon-backend.herokuapp.com/user_habits/${userHabitId}`, {
+  const url = `https://daimon-backend.herokuapp.com/user_habits/${userHabitId}`
+  return fetch(url, {
     method: "PATCH",
     headers: {
       'Content-Type': 'application/json',
@@ -60,8 +60,8 @@ export const updateHabitProgress = userHabitId => dispatch => {
 
 export const deleteHabit = (userHabitId) => dispatch => {
   dispatch({ type: "DELETE_HABIT_START" });
-
-  return fetch(`https://daimon-backend.herokuapp.com/user_habits/${userHabitId}`, {
+  const url = `https://daimon-backend.herokuapp.com/user_habits/${userHabitId}`
+  return fetch(url, {
     method: "DELETE",
     headers: {
       'Authorization': localStorage.token

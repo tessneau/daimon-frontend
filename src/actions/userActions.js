@@ -1,8 +1,9 @@
 // medium article: https://medium.com/how-i-get-it/rails-react-js-heroku-deployment-43d7469e122e
 
 export const logIn = (loginInformation={}) => dispatch => {
-  dispatch({ type: "LOGIN_REQUEST_START" })
-  return fetch('https://daimon-backend.herokuapp.com/login', {
+  dispatch({ type: "LOGIN_REQUEST_START" });
+  const url = 'https://daimon-backend.herokuapp.com/login'
+  return fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -25,7 +26,8 @@ export const logIn = (loginInformation={}) => dispatch => {
 
 export const getCurrentUser = (token) => {
   return (dispatch) => {
-    fetch("https://daimon-backend.herokuapp.com/profile", {
+    const url = "https://daimon-backend.herokuapp.com/profile"
+    fetch(url, {
       method: "GET",
       headers: {
         "Authorization": token
@@ -47,8 +49,9 @@ export const getCurrentUser = (token) => {
 
 
 export const signUp = (signUpInformation={}) => dispatch => {
-  dispatch({ type: "SIGNUP_REQUEST_START" })
-  return fetch('https://daimon-backend.herokuapp.com/signup', {
+  dispatch({ type: "SIGNUP_REQUEST_START" });
+  const url = 'https://daimon-backend.herokuapp.com/signup'
+  return fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -71,7 +74,8 @@ export const signUp = (signUpInformation={}) => dispatch => {
 }
 
 export const createPost = (postInformation={}) => dispatch => {
-  return fetch('https://daimon-backend.herokuapp.com/posts', {
+  const url = 'https://daimon-backend.herokuapp.com/posts'
+  return fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type':'application/json',
