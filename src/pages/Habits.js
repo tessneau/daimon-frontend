@@ -1,41 +1,35 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import Habit from '../components/Habit';
 import HabitModal from '../components/HabitModal'
 import '../style/Habits.scss';
 import '../style/HabitModal.scss';
 
-class Habits extends Component {
+const Habits = ({ userHabits }) => {
 
-  state = {
-    show: false
+  const [show, setShow] = useState(false)
+
+  const handleModal = () => {
+    setShow(!show)
   }
 
-  handleModal = () => {
-    this.setState({show: !this.state.show})
-  }
-
-  generateHabits = () => {
-    if (this.props.userHabits){
-    return this.props.userHabits.map(habit => {
+  const generateHabits = () => {
+    if (userHabits){
+    return userHabits.map(habit => {
       const percent = habit.habit.maxFrequency === 0 ? 100 : (habit.progress_count / habit.habit.maxFrequency)*100
       return <Habit key={habit.id} {...habit} percent={percent}/>
       })
   }}
-
-  render() {
     return (
       <div className="habits-container">
       <h1>HABITS</h1>
-      <button className="btn" onClick={this.handleModal}>+</button>
-      {this.state.show ? <HabitModal show={this.state.show} handleModal={this.handleModal} /> : null}
+      <button className="btn" onClick={handleModal}>+</button>
+      {show ? <HabitModal show={show} handleModal={handleModal} /> : null}
         <div className="habits-ul">
-          {this.generateHabits()}
+          {generateHabits()}
         </div>
       </div>
     );
-  }
-
 }
 
 const mapStateToProps = state => {
