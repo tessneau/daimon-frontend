@@ -90,6 +90,7 @@ export const createPost = (postInformation={}) => dispatch => {
       dispatch({type: "SAVE_POST_TO_USER", post: data.post})
       })
     .catch(error => {
+      debugger
       console.log('create post failure')
       // dispatch({ type: 'SIGNUP_REQUEST_FAILURE', error: error })
     })
