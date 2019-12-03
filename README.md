@@ -1,68 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🌬 Daimon 🌬
 
-## Available Scripts
+A community driven habit-tracking app for honest professionals.
 
-In the project directory, you can run:
+[Check it out live](https://daimon-frontend.herokuapp.com/) (heroku deployment in progress)
 
-### `npm start`
+![app runthrough gif](https://giant.gfycat.com/RawTiredElk.gif)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 👣 Installation
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+ #### 1. API Backend
+1. Enter into the backend folder with `cd daimon-backend`
+2. Run `bundle install` in order to install the necessary gems
+3. Enter `rails db:migrate && rails db:seed` in order to set up the tables and seed the wirtten data
+4. (optional) Check that the data seeded by entering `rails c`, then `User.all` once you've entered the console mode. If the results aren't nil then the data has succesfully seeded. If not, contact me.
+5. Finally, enter `rails s` and copy the resulting url listed as `Listening on [url]` (often it will be localhost:3000) and paste the url into your browser. The available end paths are users, posts, habits, categories 
 
-### `npm test`
+#### 2. Frontend
+1. Make sure you are running a web server with the backend API (step 2) and open a new tab in the directory
+2. From the home folder, enter into the frontend folder with `cd daimon-frontend`
+3. Enter `npm start` and follow the steps given to run the server in your browser
+      
+      
+## 🏹Usage
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* A user can login or sign up
+* A user can then browse through the web app with a navigation bar
+* On the Habits page, a user can create new habits, delete habits, and interact with their created habits. 
+* A user can click on a habit card, adding to the progress of that habit and recieve confirmation through an animated pie chart
+* On the Community Page, a user can get motivation from others by reading through different forums, organized by category
+* A user can create their own motivation post and share with others
+* A user can give an olive branch(like) and pin other people's posts
+* On the Profile page, a filter button is available to see the posts that the user has created and those they've pinned.
+* A user can logout through the navigation bar
+      
+## 📦Built With
 
-### `npm run build`
+* [Victory](https://github.com/FormidableLabs/victory) - Interactive data visualizations 
+* [ReactJS](https://github.com/facebook/react) - Frontend Framework
+* [Redux](https://github.com/reduxjs/redux) - React state organizer
+* [Redux-Thunk](https://github.com/reduxjs/redux-thunk) - Middleware for asynch logic
+* [Ruby on Rails](https://github.com/rails/rails) - Backend API
+* [ActiveModel Serializers](https://github.com/rails-api/active_model_serializers) - JSON:API Seralizers for Ruby Objects
+* [JWT for Ruby](https://github.com/jwt/ruby-jwt) - JSON Web Token for Login/Signup encryption
+* [Faker](https://github.com/faker-ruby/faker) - Fake Twin Peaks and Lorem Ipsum data
+* [TinyGraphs](https://github.com/taironas/tinygraphs) - Avatar placeholders
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛒Future Tasks
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+- [x] Refactor Redux and Ruby files
+- [ ] Add social media sharing features 
+- [ ] Add a Victory graph to track consistent habit progress
+- [ ] Replace AMS with [fastJSON](https://github.com/Netflix/fast_jsonapi) for speed
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🦕Authors
 
-### `npm run eject`
+[Tess Neau](https://github.com/tessneau) - tessneau@gmail.com
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🙏Acknowledgements
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Flatiron School, [Mazen Al Swar](https://github.com/mazenswar), and [Leizl Samano](https://github.com/lsamano)
+* FormidableLabs for having great documentation on Victory
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
