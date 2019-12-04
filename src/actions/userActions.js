@@ -1,4 +1,3 @@
-// medium article: https://medium.com/how-i-get-it/rails-react-js-heroku-deployment-43d7469e122e
 
 export const logIn = (loginInformation={}) => dispatch => {
   dispatch({ type: "LOGIN_REQUEST_START" });
@@ -68,7 +67,7 @@ export const signUp = (signUpInformation={}) => dispatch => {
     }
   })
   .catch(error => {
-    console.log('eroor time')
+    console.log('signup error')
     dispatch({ type: 'SIGNUP_REQUEST_FAILURE', error: error })
   })
 }
@@ -90,9 +89,8 @@ export const createPost = (postInformation={}) => dispatch => {
       dispatch({type: "SAVE_POST_TO_USER", post: data.post})
       })
     .catch(error => {
-      debugger
       console.log('create post failure')
-      // dispatch({ type: 'SIGNUP_REQUEST_FAILURE', error: error })
+      dispatch({ type: 'CREATE_POST_FAILURE', error: error })
     })
 }
 

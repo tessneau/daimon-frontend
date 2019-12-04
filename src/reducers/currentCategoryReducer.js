@@ -29,6 +29,9 @@ export default (state = initialState, action) => {
       const sortedPostsCreate = action.category.posts.sort((a,b) => (b.branch_count - a.branch_count))
       return { ...action.category, posts: sortedPostsCreate, loading: false };
 
+    case "CREATE_POST_FAILURE":
+      return {...state, error: action.error}
+
     default:
       return state;
   }
